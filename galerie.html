@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waction Studio</title>
+  <link rel="stylesheet" href="galerie.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="brand">WACTION STUDIO</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="drone.html">Drones</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class='home'>
+        <video class="video-slide active" src='InstaTit.mp4' autoplay muted loop></video>
+        <video class="video-slide" src='Video/irl.mp4' autoplay muted loop></video>
+        <video class="video-slide" src='Video/Vid.mp4' autoplay muted loop></video>
+        <video class="video-slide" src='Video/VidFPV.mp4' autoplay muted loop></video>
+        <video class="video-slide" src='Video/MAX.mp4' autoplay muted loop></video>
+        
+        <div class="content">
+            <h1>Galerie</h1>
+            <h3>Vidéos aériennes FPV & DJI</h3>
+            
+            
+        </div>
+        <div class="media-icon">
+            <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+             <a href="#"> <i class='fab fa-instagram'></i></a>
+              <a href="#"> <i class='fab fa-twitter'></i></a>
+
+        </div>
+        <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+
+        //Jvascript 
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelector(".video-slide");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
